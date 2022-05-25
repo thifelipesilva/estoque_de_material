@@ -6,9 +6,9 @@ class MateriaisController {
     static async listaMateriais(req, res) {
         try {
             const materiais = await Materiais.findAll();  
-            res.status(200).json(materiais);
+            return res.status(200).json(materiais);
         } catch (error) {
-            res.status(400).json(error);
+            return res.status(400).json(error);
         }
         
     }
@@ -17,9 +17,9 @@ class MateriaisController {
         const dados = req.body;
         try {
             const material = await Materiais.create(dados);
-            res.status(201).json(material);
+            return res.status(201).json(material);
         } catch (error) {
-            res.status(401).json(error);
+            return res.status(401).json(error);
         }
     }
 
@@ -29,9 +29,9 @@ class MateriaisController {
             const material = await Materiais.findOne({where: {
                 id: id
             }});
-            res.status(200).json(material);
+            return res.status(200).json(material);
         } catch (error) {
-            res.status(400).json(error)
+            return res.status(400).json(error)
         }
     }
 
@@ -45,9 +45,9 @@ class MateriaisController {
                 }
             });
             const materialAtualizado = await Materiais.findOne({ where: { id: id } })
-            res.status(200).json(materialAtualizado);
+            return res.status(200).json(materialAtualizado);
         } catch (error) {
-            res.status(400).json(error);
+            return res.status(400).json(error);
         }
     }
 
@@ -55,9 +55,9 @@ class MateriaisController {
         const id = req.params.id;
         try {
             await Materiais.destroy({ where: { id: id } });
-            res.status(200).json(`Id ${id} deletado com sucesso`);
+            return res.status(200).json(`Id ${id} deletado com sucesso`);
         } catch (error) {
-            res.status(400).json(error);
+            return res.status(400).json(error);
         }
     }
 

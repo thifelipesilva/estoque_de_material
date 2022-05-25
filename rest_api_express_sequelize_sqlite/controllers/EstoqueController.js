@@ -26,9 +26,9 @@ class EstoqueController {
         const id = req.params.id;
         try {
             const material = await Estoque.findOne({ where: { id: id } });
-            res.status(200).json(material);
+            return res.status(200).json(material);
         } catch (error) {
-            res.status(400).json(error);
+            return res.status(400).json(error);
         }
     }
 
@@ -38,9 +38,9 @@ class EstoqueController {
         try {
             await Estoque.update(dados, { where: { id: id } });
             const estoqueAtualizado = await Estoque.findOne( { where: { id: id } });
-            res.status(200).json(estoqueAtualizado)
+            return res.status(200).json(estoqueAtualizado)
         } catch (error) {
-            res.status(400).json(error);
+            return res.status(400).json(error);
         }
     }
 
@@ -49,9 +49,9 @@ class EstoqueController {
         const id = req.params.id;
         try {
             await Estoque.destroy({ where: { id: id } });
-            res.status(200).json(`Id ${id} foi deletado com sucesso`);
+            return res.status(200).json(`Id ${id} foi deletado com sucesso`);
         } catch (error) {
-            res.status(200).json(error);
+            return res.status(200).json(error);
         }
     }
 }

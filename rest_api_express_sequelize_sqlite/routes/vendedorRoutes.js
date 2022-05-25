@@ -5,9 +5,12 @@ const router = Router();
 
 router.get('/vendedor', VendedorController.listaVendedores);
 router.get('/vendedor/:id', VendedorController.listaUmVendedor);
-router.post('/vendedor', VendedorController.cadastroVendedor);
+router.post('/vendedor', VendedorController.cadastraVendedor);
 router.put('/vendedor/:id', VendedorController.atualizaVendedor);
 router.delete('/vendedor/:id', VendedorController.deletaVendedor);
+
+
+router.post('/vendedor/login', VendedorController.loginVendedor);
 
 
 
