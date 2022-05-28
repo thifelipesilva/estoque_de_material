@@ -1,0 +1,19 @@
+.nav_user {
+    display: flex;
+}
+
+.nav_user__item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+
+.nav_user__item span {
+    cursor: pointer;
+}
+
+
+.nav_user__item span:hover {
+    text-decoration: underline;
+}

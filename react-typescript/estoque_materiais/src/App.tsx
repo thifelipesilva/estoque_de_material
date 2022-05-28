@@ -1,13 +1,12 @@
 import React from 'react';
-import MenuLateral from './components/MenuLateral';
+import Header from './components/Header'
 import Materiais from './pages/Materiais';
-
+import '@fontsource/roboto';
 
 function App() {
   return (
     <div className="App">
-      <MenuLateral/>
-      
+      <Header/>
       <Materiais/>
     </div>
   );

@@ -1,0 +1,26 @@
+.nav__lista {
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav__lista-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav__lista-item:hover {
+    text-decoration: underline;
+}
+
+.nav__lista li {
+    list-style: none;
+    font-size: 14px;
+
+    margin-right: 10px;
+    
+}
+
+
+
